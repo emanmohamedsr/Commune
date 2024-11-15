@@ -1,0 +1,221 @@
+/* global styles */
+:root {
+    --main-color: #362765;
+    --secondary-color: #
+    --bg-color: #f6f9fe;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--bg-color);
+}
+/* container component */
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (min-width: 768px) {
+    .container {
+        max-width: 750px;
+    }
+}
+@media (min-width: 992px) {
+    .container {
+        max-width: 970px;
+    }
+}
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1170px;
+    }
+}
+/* nav */
+nav {
+    height: 60px;
+    margin-bottom: 60px;
+    position: relative;
+    background-color: var(--bg-color);
+}
+nav .container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav .container .logo {
+    cursor: pointer;
+}
+nav .container .links .list-icon {
+    display: none;
+}
+nav .container .links ul {
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+}
+nav .container .links ul li a {
+    color: #40424e;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+nav .container .links ul li a:not(.active):hover {
+    background-color: #f1f3f5;
+    color: #40424e;
+}
+nav .container .links ul li a.active {
+    background-color: var(--main-color);
+    color: #fff;
+}
+/* nav media */
+@media (max-width: 768px) {
+    nav .container .links .list-icon {
+        display: block;
+        cursor: pointer;
+    }
+    nav .container .links ul {
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0px;
+        background-color: #fff;
+        border-bottom: .5px solid var(--main-color);
+        border-top: .5px solid var(--main-color);
+        display: none;
+    } 
+    nav .container .links ul.show {
+        display: block;
+    }
+    nav .container .links ul li a, 
+    nav .container .links ul li a.active {
+        background-color: #fff;
+        border-radius: 0;
+        color: #40424e;
+        display: block;
+        padding: 20px 30px;
+    }
+    nav .container .links ul li a.active:hover {
+        background-color: #f1f3f5;
+        color: #40424e;
+    }
+}
+/* main */
+main {
+    min-height: calc(100vh - 120px);
+}
+main .container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* main | content section 1) link*/
+main .container .content .link {
+    font-size: 14px;
+    width: fit-content;
+    margin: 0 auto 20px;
+    background-color: var(--main-color);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+main .container .content .link a {
+    color: #fff;
+    padding-left: 3px;
+}
+/* main | content section 2) text*/
+main .container .content .text h1 {
+    font-size: 24px;
+    color: var(--main-color);
+    line-height: 1.5;
+    margin-bottom: 10px;
+} 
+main .container .content .text h1 + p {
+    font-size: 18px;
+    color: #40424e;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+/* main | content section 3) email*/
+main .container .content .email {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+main .container .content .email input[type="email"] {
+    min-width: 230px;
+    padding: 15px 20px;
+    border: 1px solid #40424e;
+    border-radius: 5px;
+}
+main .container .content .email input[type="email"]:focus {
+    box-shadow: 0 0 2px 1px var(--main-color);
+    outline: none;
+}
+main .container .content .email button {
+    min-width: fit-content;
+    background-color: var(--main-color);
+    color: #fff;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+main .container .content .email button:hover {
+    scale: 1.05;
+}
+/* main | content section 4) companies*/
+main .container .content .compaines p {
+    font-size: 18px;
+    color: #40424e;
+    margin: 30px 0 20px;
+}
+main .container .content .compaines ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+main .container .content .compaines ul li img {
+    transition: all 0.3s linear;
+}
+main .container .content .compaines ul li img:hover {
+    scale: 1.2;
+    cursor: pointer;
+}
+/* content section media */
+@media (max-width: 992px) {
+    main .container .content {
+        width: 100%;
+        text-align: center;
+    }
+    main .container .content .email ,
+    main .container .content .compaines ul {
+        justify-content: center;
+    }
+}
+/* main | main-image section */
+main .container .main-img {
+    max-width: 600px;
+}
+main .container .main-img img { 
+    max-width: 100%;
+}
+/* main-image section media */
+@media (max-width: 992px) {
+    main .container .main-img {
+        display: none;
+    }
+}
